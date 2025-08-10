@@ -35,8 +35,6 @@ export default function Home() {
         muted
         loop
         playsInline
-        preload="auto"
-        poster="https://res.cloudinary.com/dliyfpqqu/image/upload/v1754760557/qo1rgbnt3m3f7wouibjp.jpg" 
       >
         <source
           src="https://res.cloudinary.com/dliyfpqqu/video/upload/v1754837283/khx3s1zbo9slztarhliw.mp4"
