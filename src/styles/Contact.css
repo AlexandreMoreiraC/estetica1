@@ -12,13 +12,12 @@
 }
 
 .contact-intro h1 {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 800;
-  color: #1b1410;
+  color: #000000;
   letter-spacing: 1.5px;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  text-shadow: 1px 1px 3px rgba(169, 116, 82, 0.5);
 }
 
 .contact-intro p {
@@ -39,7 +38,7 @@
 
 .contact-form label {
   font-weight: 600;
-  color: #302419;
+  color: #000000;
   font-size: 1.3rem;
 }
 

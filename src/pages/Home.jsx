@@ -6,6 +6,7 @@ export default function Home() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const currentRef = servicesRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -15,13 +16,9 @@ export default function Home() {
       },
       { threshold: 0.1 }
     );
-
-    if (servicesRef.current) {
-      observer.observe(servicesRef.current);
-    }
-
+    if (currentRef) observer.observe(currentRef);
     return () => {
-      if (servicesRef.current) observer.unobserve(servicesRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, []);
 
@@ -29,19 +26,20 @@ export default function Home() {
     <>
       <main>
         <section className="hero">
- <video
-        className="hero-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source
-          src="https://res.cloudinary.com/dliyfpqqu/video/upload/v1754837283/khx3s1zbo9slztarhliw.mp4"
-          type="video/mp4"
-        />
-        Seu navegador não suporta vídeo.
-      </video>
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source
+              src="https://res.cloudinary.com/dliyfpqqu/video/upload/v1754837283/khx3s1zbo9slztarhliw.mp4"
+              type="video/mp4"
+            />
+            Seu navegador não suporta vídeo.
+          </video>
           <div className="hero-content">
             <h1>Luxurious Salon Experience</h1>
             <p>Transformando Seu Visual com Excelência</p>
@@ -73,7 +71,7 @@ export default function Home() {
               { name: 'Unhas', img: 'https://res.cloudinary.com/dliyfpqqu/image/upload/v1754761043/txjbda5smonyynmtlvwa.jpg' }
             ].map((service) => (
               <div key={service.name} className="service-card">
-                <img src={service.img} alt={service.name} />
+                <img src={service.img} alt={service.name} loading="lazy" />
                 <h3>{service.name}</h3>
               </div>
             ))}
@@ -98,7 +96,7 @@ export default function Home() {
               'https://res.cloudinary.com/dliyfpqqu/image/upload/v1754760424/ptscwdnoyijmo2jjva9o.webp'
             ].map((imgUrl, i) => (
               <div key={i} className="gallery-item">
-                <img src={imgUrl} alt={`Gallery ${i + 1}`} />
+                <img src={imgUrl} alt={`Gallery ${i + 1}`} loading="lazy" />
               </div>
             ))}
           </div>
