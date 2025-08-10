@@ -244,8 +244,9 @@ main {
 
 .reviews-footer {
   margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #888;
+  font-size: 1.2rem;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Contact Banner */

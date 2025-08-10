@@ -73,7 +73,6 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .header {
     padding: 15px 20px;
@@ -91,6 +90,10 @@
   .nav-menu ul li a {
     font-size: 1.6rem;
   }
+
+  .menu-toggle {
+    display: flex;
+  }
 }
 
 @media (max-width: 480px) {
@@ -105,12 +108,12 @@
 
   .nav-menu {
     position: fixed;
-    top: 70px; /* altura do header */
+    top: 70px;
     right: 0;
     background-color: #fff;
     width: 70vw;
     max-width: 280px;
-    height: 100vh;
+    height: calc(100vh - 70px);
     transform: translateX(100%);
     transition: transform 0.3s ease;
     box-shadow: -2px 0 12px rgba(0,0,0,0.1);
@@ -132,9 +135,5 @@
   .nav-menu ul li a {
     font-size: 1.8rem;
     padding: 10px 0;
-  }
-
-  .menu-toggle {
-    display: flex;
   }
 }

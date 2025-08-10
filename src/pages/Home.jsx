@@ -29,10 +29,21 @@ export default function Home() {
     <>
       <main>
         <section className="hero">
-          <video className="hero-video" autoPlay muted loop playsInline>
-            <source src="https://res.cloudinary.com/dliyfpqqu/video/upload/v1754837283/khx3s1zbo9slztarhliw.mp4" type="video/mp4" />
-            Seu navegador não suporta vídeo.
-          </video>
+ <video
+        className="hero-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="https://res.cloudinary.com/dliyfpqqu/image/upload/v1754762090/cghpb8anmc0pn4uxixpn.jpg" 
+      >
+        <source
+          src="https://res.cloudinary.com/dliyfpqqu/video/upload/v1754837283/khx3s1zbo9slztarhliw.mp4"
+          type="video/mp4"
+        />
+        Seu navegador não suporta vídeo.
+      </video>
           <div className="hero-content">
             <h1>Luxurious Salon Experience</h1>
             <p>Transformando Seu Visual com Excelência</p>
