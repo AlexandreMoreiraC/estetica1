@@ -19,7 +19,7 @@
   text-decoration: none;
 }
 
-.header nav ul {
+.nav-menu ul {
   display: flex;
   gap: 25px;
   list-style: none;
@@ -27,7 +27,7 @@
   padding: 0;
 }
 
-.header nav ul li a {
+.nav-menu ul li a {
   font-weight: 600;
   font-size: 2rem;
   padding: 5px 0;
@@ -36,8 +36,41 @@
   transition: color 0.3s ease;
 }
 
-.header nav ul li a:hover {
+.nav-menu ul li a:hover {
   color: #f8768b;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #f8768b;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Responsividade */
@@ -51,37 +84,57 @@
     font-size: 2.5rem;
   }
 
-  .header nav ul {
+  .nav-menu ul {
     gap: 15px;
   }
 
-  .header nav ul li a {
+  .nav-menu ul li a {
     font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: nowrap;
     padding: 15px 15px;
   }
 
   .header .logo a {
     font-size: 2rem;
-    margin-bottom: 10px;
   }
 
-  .header nav ul {
+  .nav-menu {
+    position: fixed;
+    top: 70px; /* altura do header */
+    right: 0;
+    background-color: #fff;
+    width: 70vw;
+    max-width: 280px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.1);
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    gap: 10px;
+    padding-top: 2rem;
   }
 
-  .header nav ul li a {
-    font-size: 1.4rem;
-    padding: 8px 0;
-    width: 100%;
-    display: block;
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .nav-menu ul li a {
+    font-size: 1.8rem;
+    padding: 10px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 }
